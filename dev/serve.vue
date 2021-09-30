@@ -1,5 +1,6 @@
 <script>
 import Vue from 'vue';
+
 // Uncomment import and local "components" registration if library is not registered globally.
 // import { VuelementorSample } from '@/entry.esm';
 
@@ -9,9 +10,34 @@ export default Vue.extend({
   //  VuelementorSample,
   // }
 
+  runtimeCompiler: true,
+
   data() {
     return {
-      content: [],
+      editable: true,
+      content: {
+        sections: [
+          {
+            rows: [
+              {
+                components: [
+                  {
+                    bind: {},
+                    component: {
+                      template: `<div>Hello</div>`,
+                    },
+                  }
+                ],
+              },
+              {},
+              {},
+            ],
+          },
+          {},
+          {},
+          {},
+        ],
+      },
     };
   },
 });
@@ -19,18 +45,9 @@ export default Vue.extend({
 
 <template>
   <div id="app">
-    <!-- <vuelementor-sample /> -->
-
-    <div style="display:flex;">
-      <div style="flex-grow:1;">
-        <vuelementor v-model="content"></vuelementor>
-      </div>
-
-      <div style="flex-grow:1;">
-        <vuelementor-edit v-model="content"></vuelementor-edit>
-      </div>
-    </div>
-
-    <pre>content: {{ content }}</pre>
+    <label><input type="checkbox" v-model="editable"> Editável</label>
+    <hr>
+    <vuelementor v-model="content" :editable="editable"></vuelementor>
+    <pre>$data: {{ $data }}</pre>
   </div>
 </template>
