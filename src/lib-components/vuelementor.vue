@@ -5,5 +5,5 @@
 </template>
 
 <style>
-.vuelementor {border:solid 1px green;}
+/* .vuelementor {border:solid 1px green;} */
 </style>
