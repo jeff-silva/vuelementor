@@ -42,6 +42,7 @@ const baseConfig = {
     },
     vue: {
       css: true,
+      preprocessStyles: true,
       template: {
         isProduction: true,
       },

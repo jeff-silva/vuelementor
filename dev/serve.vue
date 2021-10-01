@@ -18,7 +18,7 @@ export default Vue.extend({
       content: {
         sections: [
           {
-            rows: [
+            columns: [
               {
                 components: [
                   {
@@ -42,6 +42,8 @@ export default Vue.extend({
   },
 });
 </script>
+
+<!-- sm=tablet, lg=desktop -->
 
 <template>
   <div id="app">

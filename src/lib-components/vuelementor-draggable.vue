@@ -28,7 +28,9 @@ export default {
     },
 
     methods: {
-        emitValue() {
+        emitValue(value=null) {
+            if (value!==value) this.props.value = value;
+            this.$emit('value', this.props.value);
             this.$emit('input', this.props.value);
             this.$emit('change', this.props.value);
         },
